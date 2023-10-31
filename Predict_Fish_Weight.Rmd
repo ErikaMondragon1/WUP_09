@@ -50,7 +50,7 @@ Weight = -536 + 74.77*Height+ 69.62*Width
 
 ## Pike
 ```{r}
-perch=filter(fish, Species == "Perch")
+pike=filter(fish, Species == "Pike")
 ```
 
 
@@ -68,10 +68,23 @@ summary(best2Pike)
 Weight = -1675.79 + -105.64*Length1+ 141.25*Length3
 
 ## Roach
-
-### Best Models
+```{r}
+roach=filter(fish, Species == "Roach")
+```
 
 ### Best Two regressor model
+```{r}
+modelRoach= regsubsets(Weight ~ Length1 + Length2 + Length3 + Height + Width, data=roach)
+summary(modelRoach)
+```
+
+```{r}
+best2Roach = lm(Weight ~ Width + Length3, data = roach)
+summary(best2Roach)
+```
+
+## best 2-variable equation
+Weight = -319.118 + -72.300*Width+ 8.278*Length3
 
 ## Final Summary Statements
-for perch these two variables are best
+ 
