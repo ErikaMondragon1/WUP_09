@@ -79,12 +79,12 @@ summary(modelRoach)
 ```
 
 ```{r}
-best2Roach = lm(Weight ~ Width + Length3, data = roach)
+best2Roach = lm(Weight ~ Length3 + Width, data = roach)
 summary(best2Roach)
 ```
 
 ## best 2-variable equation
-Weight = -319.118 + -72.300*Width+ 8.278*Length3
+Weight = -319.118 + 8.278*Length3+ 72.300*Width
 
 ## Final Summary Statements
 For perch the best two regression model are Height and Width. For pike the best two regression model are Length1 and Length3. For roach the best two regression model are Length3 and Width. 
